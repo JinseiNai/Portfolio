@@ -1,0 +1,63 @@
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.banner {
+    margin-top: 25%;
+}
+
+/* Primary Image */
+.primary-image {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#portfolio-pic {
+    border-radius: 50%;
+    position: relative;
+    width: 60%;
+    height: 60%;
+}
+
+/* Main-Content */
+.main-content {
+    text-align: center;
+    border: 1px solid black;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+}
+
+/* Media Queries */
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+    .banner {
+        margin-top: 5%;
+    }
+
+    #portfolio-pic {
+        width: 35%;
+        height: 35%;
+    }
+}
