@@ -27,7 +27,6 @@
     border-radius: 50%;
     position: relative;
     width: 40%;
-    /* height: 60%; */
 }
 
 /* Main-Content */
@@ -47,6 +46,13 @@
 .btn {
     display: inline-block;
     flex: 1;
+    border-radius: 0;
+    border: solid 1px black;
+}
+
+.content {
+    margin: 0 auto;
+    width: 80%;
 }
 
 /* Media Queries */
