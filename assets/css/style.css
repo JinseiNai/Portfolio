@@ -3,39 +3,50 @@
     min-height: 100vh;
 }
 
+.row {
+    margin: 0;
+}
+
 /* Header */
 .header {
     text-align: center;
-    margin-top: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .banner {
-    margin-top: 25%;
+    margin-top: 3%;
 }
 
 /* Primary Image */
 .primary-image {
     text-align: center;
-    vertical-align: middle;
 }
 
 #portfolio-pic {
     border-radius: 50%;
     position: relative;
-    width: 60%;
-    height: 60%;
+    width: 40%;
+    /* height: 60%; */
 }
 
 /* Main-Content */
 .main-content {
     text-align: center;
     border: 1px solid black;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
+    padding: 0;
+}
+
+/* Tab buttons div */
+.btnDiv {
+    display: flex;
 }
 
 .btn {
     display: inline-block;
+    flex: 1;
 }
 
 /* Media Queries */
@@ -52,12 +63,5 @@
 }
 
 @media (min-width: 1200px) {
-    .banner {
-        margin-top: 5%;
-    }
-
-    #portfolio-pic {
-        width: 35%;
-        height: 35%;
-    }
+    
 }

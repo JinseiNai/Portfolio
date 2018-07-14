@@ -2,12 +2,12 @@ let largeImg = true;
 
 $('#portfolio-pic').on('click', function () {
     if (largeImg === true) {
-        $('#portfolio-pic').animate({ height: "20%", width: "20%", top: "+=40%"}, 1000);
+        $('#portfolio-pic').animate({width: "15%"}, 1000);
         // movePic();
         addMainContent();
         largeImg = false;
     } else {
-        $('#portfolio-pic').animate({height: "60%", width: "60%", bottom: "+=40%"}, 1000);
+        $('#portfolio-pic').animate({width: "40%"}, 1000);
         $('.main-content').remove();
         largeImg = true;
     }
@@ -29,16 +29,23 @@ function movePic() {
 }
 
 function addMainContent() {
+    // Create a div for main content
     let div = $('<div>');
-    let projectBtn = $('<button>').addClass('btn').text('Project');
-    let contactBtn = $('<button>').addClass('btn').text('Contact')
+    // Create a div for buttons
+    let btnDiv = $('<div>');
+    // Create a button for each tab
+    let aboutBtn = $('<button>').addClass('btn').attr('id', 'aboutBtn').text('About');
+    let projectBtn = $('<button>').addClass('btn').attr('id', 'projectBtn').text('Project');
+    let contactBtn = $('<button>').addClass('btn').attr('id', 'contactBtn').text('Contact')
 
-    div.addClass('main-content');
+    // Give classes to the divs
+    div.addClass('main-content col-sm-12');
+    btnDiv.addClass('btnDiv');
 
     let p = $("<p>");
     p.text("This is a test, please work");
 
-    div.append(projectBtn, contactBtn);
-    div.append(p);
+    btnDiv.append(aboutBtn, projectBtn, contactBtn);
+    div.append(btnDiv, p);
     $('.page-container').append(div);
 }
