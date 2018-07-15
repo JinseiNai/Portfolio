@@ -14,21 +14,6 @@ $('#portfolio-pic').on('click', function () {
     }
 })
 
-function movePic() {
-    let elem = $('#portfolio-pic');
-    let pos = 0;
-    let intervalId = setInterval(frame, 5);
-
-    function frame() {
-        if (pos == 50) {
-            clearInterval(intervalId);
-        } else {
-            pos++;
-            elem.style.top = pos + 'px';
-        }
-    }
-}
-
 function addMainContent() {
     // Create a div for main content
     let div = $('<div>');
@@ -39,20 +24,18 @@ function addMainContent() {
     // Create a button for each tab
     let aboutBtn = $('<div>').addClass('btn').attr('id', 'aboutBtn').text('About');
     let projectBtn = $('<div>').addClass('btn').attr('id', 'projectBtn').text('Project');
-    let contactBtn = $('<div>').addClass('btn').attr('id', 'contactBtn').text('Contact')
+    let contactBtn = $('<div>').addClass('btn').attr('id', 'contactBtn').text('Contact');
+    let anchor = $('<a>').attr('href', '#contactSpot');
+    contactBtn.append(anchor);
 
     // Give classes to the divs
     div.addClass('main-content col-sm-12');
     btnDiv.addClass('btnDiv');
     contDiv.addClass('content');
 
-    let p = $("<p>");
-    p.text("This is a test, please work");
-    contDiv.append(p);
-
     btnDiv.append(aboutBtn, projectBtn, contactBtn);
     div.append(btnDiv, contDiv);
-    $('.page-container').append(div);
+    $('.content-container').append(div);
     aboutContent();
 }
 
@@ -81,20 +64,24 @@ function projectContent() {
 
     // Add controls to carousel
     // Prev control
-    let a;
-    $(a).html('<a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a>');
-    // Next Control
-    let b;
-    $(b).html('<a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a>');
+    let aTag = $('<a>');
+    aTag.addClass('carousel-control-prev').attr('href', '#carouselControls').attr('role', 'button').attr('data-slide', 'prev');
+    
+    let aSpan = $('<span>').addClass('carousel-control-prev-icon').attr('aria-hidden', 'true');
+
+    aTag.append(aSpan);
+
+    let bTag = $('<a>');
+    bTag.addClass('carousel-control-next').attr('href', '#carouselControls').attr('role', 'button').attr('data-slide', 'next');
+    
+    let bSpan = $('<span>').addClass('carousel-control-next-icon').attr('aria-hidden', 'true');
+
+    bTag.append(bSpan);
 
     // Append inner div to carousel div
     // Append controls
-    carouselDiv.append(innerDiv, a, b);
+    carouselDiv.append(innerDiv, aTag, bTag);
     $('.content').append(carouselDiv);
-}
-
-function contactContent() {
-
 }
 
 // On click event for when about, project and contact button are clicked.
@@ -111,6 +98,12 @@ $(document).on('click', '.btn', function() {
     }
 
     if (btnId === "contactBtn") {
-        $('.content').html('');
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    if (btnId === "submitBtn") {
+        $('#inputName').val('');
+        $('#inputEmail').val('');
+        $('#inputComment').val('');
     }
 })

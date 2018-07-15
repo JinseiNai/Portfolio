@@ -1,3 +1,7 @@
+body {
+    background-color: lightblue;
+}
+
 .page-container {
     position: relative;
     min-height: 100vh;
@@ -51,8 +55,32 @@
 }
 
 .content {
+    margin: 20px auto;
+    width: 90%;
+}
+
+/* Contact */
+.contact {
+    height: 400px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 5%;
+    background-color: slateblue;
+    margin-top: 3%;
+}
+
+.contact form {
     margin: 0 auto;
-    width: 80%;
+    width: 50%;
+}
+
+/* Footer */
+.footer {
+    bottom: 0;
+    height: 100px;
+    text-align: center;
+    background-color: slategray;
+    padding-top: 40px;
 }
 
 /* Media Queries */
