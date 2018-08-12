@@ -1,5 +1,5 @@
 // Array for project images
-let projectImg = ["assets/images/destinator.png", "assets/images/dauntless-splash.png", "assets/images/rupee-collector.png", "assets/images/gif4u.png", "assets/images/train-schedule.png", "assets/images/trivia-game.png", "assets/images/word-guess.png"];
+let projectImg = ["assets/images/destinator.png", "assets/images/dauntless-splash.png", "assets/images/rupee-collector.png", "assets/images/gif4u.png", "assets/images/train-schedule.png", "assets/images/trivia-game.png", "assets/images/word-guess.png", "assets/images/friend-finder.png"];
 let largeImg = true;
 $('#portfolio-pic').on('click', function () {
     if (largeImg === true) {
